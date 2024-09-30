@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "867587245014",
+    "project_id": "transitsync-6b249",
+    "storage_bucket": "transitsync-6b249.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867587245014:android:d026ba5eb02860267e9a77",
+        "android_client_info": {
+          "package_name": "com.example.transitsync"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyXNAoMyciMmTsfg12Brwk7MvfcH7fGbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
