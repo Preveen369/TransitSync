@@ -17,7 +17,7 @@
         android:theme="@style/Theme.TransitSync"
         tools:targetApi="31">
         <activity
-            android:name=".BusRouteDetail"
+            android:name=".DetailActivity"
             android:exported="false" />
         <activity
             android:name=".BusDetails"

@@ -109,7 +109,8 @@ public class SignUpActivity extends AppCompatActivity {
                         });
                     } else {
                         // Handle failed account creation
-                        Toast.makeText(SignUpActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
+                        String errorMessage = Objects.requireNonNull(task.getException()).getMessage();
+                        Toast.makeText(SignUpActivity.this, "Error: " + errorMessage, Toast.LENGTH_LONG).show();
                     }
                 }
             });
