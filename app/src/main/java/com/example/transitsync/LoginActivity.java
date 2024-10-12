@@ -121,4 +121,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * @noinspection deprecation
+     */
+    @Override
+    public void onBackPressed() {
+        // Exit the app instead of going back to the launcher
+        super.onBackPressed();
+        finishAffinity(); // Close all activities and exit the app
+    }
 }

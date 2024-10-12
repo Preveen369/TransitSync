@@ -43,9 +43,17 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, ProfileDetails.class);
+                startActivity(intent);
             }
         });
+    }
 
+    /** @noinspection deprecation*/
+    @Override
+    public void onBackPressed() {
+        // Exit the app instead of going back to the launcher
+        super.onBackPressed();
+        finishAffinity(); // Close all activities and exit the app
     }
 }

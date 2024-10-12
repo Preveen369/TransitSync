@@ -1,12 +1,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#83FFFEFE">
 
     <ImageView
         android:id="@+id/bus_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bus_icon"
+        android:src="@drawable/bus_icon_removebg"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:foregroundGravity="center"/>
@@ -20,7 +21,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:hint="Email Address"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:backgroundTint="@color/dark_blue"
+        android:textCursorDrawable="@drawable/custom_cursor"/>
 
     <EditText
         android:id="@+id/password"
@@ -32,20 +35,22 @@
         android:layout_marginEnd="20dp"
         android:hint="Password"
         android:inputType="textPassword"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:backgroundTint="@color/dark_blue"
+        android:textCursorDrawable="@drawable/custom_cursor"/>
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_gravity="center"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="152dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="469dp"
+        android:layout_marginEnd="141dp"
+        android:background="@drawable/edit_btn_background"
         android:onClick="login"
         android:text="Sign In"
         android:textColor="@color/white" />
@@ -53,15 +58,15 @@
     <TextView
         android:id="@+id/signup_link"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="28dp"
+        android:layout_below="@+id/login_button"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="177dp"
-        android:layout_marginTop="505dp"
-        android:layout_marginEnd="170dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:text="Sign up"
         android:textSize="18dp" />
