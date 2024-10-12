@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="212dp"
+        android:layout_width="213dp"
         android:layout_height="188dp"
         android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/bus_icon_removebg" />
 
     <TextView
-        android:layout_width="210dp"
+        android:layout_width="211dp"
         android:layout_height="40dp"
         android:gravity="center"
         android:text="TransitSync"
