@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- Bus Image Placeholder -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/bus_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/bus_icon"
+        android:background="@drawable/edit_btn_background"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center" />
+    </LinearLayout>
+
+    <!-- Bus Route Name -->
+    <TextView
+        android:id="@+id/bus_route_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Route Name"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- Bus Number, Timings and Distance Covered -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <!-- Left Column: Bus Number and Timings -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bus_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="Bus Number"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bus_timings"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="8dp"
+                android:text="Bus Timings: \n6:00 AM - 9:00 PM"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Right Column: Distance Covered -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/distance_covered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distance: 0 km"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Nearby Bus Stops -->
+    <TextView
+        android:id="@+id/bus_stops_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bus Stops Covered:"
+        android:textSize="16dp"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/nearby_stops"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop 1, Stop 2, Stop 3"
+        android:textSize="16dp"
+        android:textStyle="bold"/>
+
+    <!-- Button to View Bus Details -->
+    <Button
+        android:id="@+id/view_bus_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_btn_background"
+        android:text="Track bus location"
+        android:textColor="@color/white" />
+
+</LinearLayout>

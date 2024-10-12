@@ -31,7 +31,8 @@
             android:hint="From Location"
             android:layout_marginBottom="10dp"
             android:minHeight="48dp"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textCursorDrawable="@drawable/custom_cursor"/>
 
         <EditText
             android:id="@+id/to_input"
@@ -40,14 +41,15 @@
             android:background="@drawable/edit_text_background"
             android:hint="To Location"
             android:minHeight="48dp"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textCursorDrawable="@drawable/custom_cursor"/>
 
         <Button
             android:id="@+id/track_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Track my bus"
-            android:background="@drawable/edittext_background"
+            android:background="@drawable/edit_btn_background"
             android:textColor="#FFFFFF"
             android:layout_marginTop="10dp"
             android:padding="12dp"

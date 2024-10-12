@@ -143,7 +143,7 @@ public class BusLocation extends AppCompatActivity implements OnMapReadyCallback
                     .add(fromLatLng) // Starting location
                     .add(toLatLng) // Destination location
                     .color(getResources().getColor(android.R.color.holo_red_dark))
-                    .width(16);
+                    .width(10);
 
             // Clear existing polyline if it exists
             if (busPolyline != null) {
@@ -214,19 +214,19 @@ public class BusLocation extends AppCompatActivity implements OnMapReadyCallback
                             busMarker = mMap.addMarker(new MarkerOptions().position(busCurrentLocation).title("Bus Location").icon(busIcon));
 
                             // Optionally, move camera to the bus location (if needed)
-                            // mMap.moveCamera(CameraUpdateFactory.newLatLng(busCurrentLocation));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLng(busCurrentLocation));
                         }
                     }
                 });
             }
-        }, 0, 150); // Update every 150 ms
+        }, 0, 165); // Update every 150 ms
         isTrackingBus = true; // Set the tracking flag to true
     }
 
 
     private boolean hasBusReachedDestination() {
         // Check if the bus is close enough to the destination (using a simple distance check)
-        double threshold = 0.0001; // Define a small threshold for latitude/longitude
+        double threshold =  0.00055; // Define a small threshold for latitude/longitude (0.001)
         return Math.abs(busCurrentLocation.latitude - toLatLng.latitude) < threshold &&
                 Math.abs(busCurrentLocation.longitude - toLatLng.longitude) < threshold;
     }
