@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-10-08T12:48:27.986702700Z">
+        <DropdownSelection timestamp="2024-10-11T02:47:29.371717700Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\PREVEEN S\.android\avd\Pixel_2_XL_API_31_2.avd" />
