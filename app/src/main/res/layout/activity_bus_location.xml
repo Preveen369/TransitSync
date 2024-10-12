@@ -43,10 +43,10 @@
             android:padding="10dp" />
 
         <Button
-            android:id="@+id/search_button"
+            android:id="@+id/track_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Search"
+            android:text="Track my bus"
             android:background="@drawable/edittext_background"
             android:textColor="#FFFFFF"
             android:layout_marginTop="10dp"

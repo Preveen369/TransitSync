@@ -15,6 +15,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -32,7 +34,7 @@ public class BusLocation extends AppCompatActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private EditText fromInput;
     private EditText toInput;
-    private Button searchButton;
+    private Button trackButton;
     private LatLng fromLatLng, toLatLng; // Variables to store the LatLng of the two locations
     private Timer busTimer; // Timer to track the bus
     private LatLng busCurrentLocation; // Variable to store the bus's current location
@@ -49,7 +51,19 @@ public class BusLocation extends AppCompatActivity implements OnMapReadyCallback
         // Initialize the EditTexts and Button
         fromInput = findViewById(R.id.from_input);
         toInput = findViewById(R.id.to_input);
-        searchButton = findViewById(R.id.search_button);
+        trackButton = findViewById(R.id.track_button);
+
+        // Get the "fromLocation" and "toLocation" strings from the Intent
+        String fromLocation = getIntent().getStringExtra("fromLocation");
+        String toLocation = getIntent().getStringExtra("toLocation");
+
+        // Set the string values into the EditText fields
+        if (fromLocation != null) {
+            fromInput.setText(fromLocation);
+        }
+        if (toLocation != null) {
+            toInput.setText(toLocation);
+        }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -59,7 +73,7 @@ public class BusLocation extends AppCompatActivity implements OnMapReadyCallback
         }
 
         // Set up the search button click listener
-        searchButton.setOnClickListener(new View.OnClickListener() {
+        trackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String fromLocation = fromInput.getText().toString();
@@ -128,8 +142,8 @@ public class BusLocation extends AppCompatActivity implements OnMapReadyCallback
             PolylineOptions polylineOptions = new PolylineOptions()
                     .add(fromLatLng) // Starting location
                     .add(toLatLng) // Destination location
-                    .color(getResources().getColor(android.R.color.holo_blue_dark))
-                    .width(10);
+                    .color(getResources().getColor(android.R.color.holo_red_dark))
+                    .width(16);
 
             // Clear existing polyline if it exists
             if (busPolyline != null) {
@@ -158,33 +172,57 @@ public class BusLocation extends AppCompatActivity implements OnMapReadyCallback
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        // Update bus location (for simulation purposes, move it towards 'toLatLng')
-                        double latIncrement = (toLatLng.latitude - busCurrentLocation.latitude) / 100; // Adjust denominator for speed
-                        double lngIncrement = (toLatLng.longitude - busCurrentLocation.longitude) / 100; // Adjust denominator for speed
-
-                        busCurrentLocation = new LatLng(busCurrentLocation.latitude + latIncrement,
-                                busCurrentLocation.longitude + lngIncrement);
-
-                        // Remove the previous bus marker
-                        if (busMarker != null) {
-                            busMarker.remove();
-                        }
-
-                        // Draw the new bus marker
-                        busMarker = mMap.addMarker(new MarkerOptions().position(busCurrentLocation).title("Bus Location"));
-                        // Move camera to the bus location
-                        mMap.moveCamera(CameraUpdateFactory.newLatLng(busCurrentLocation));
-
                         // Check if the bus has reached the destination
                         if (hasBusReachedDestination()) {
+                            // Move the bus marker to the exact destination
+                            busCurrentLocation = toLatLng; // Set bus location to the destination
+
+                            // Remove the previous bus marker
+                            if (busMarker != null) {
+                                busMarker.remove();
+                                busMarker=null;
+                            }
+
+                            // Load the custom bus icon from the drawable folder
+                            BitmapDescriptor busIcon = BitmapDescriptorFactory.fromResource(R.drawable.bus_clipart);
+
+                            // Draw the new bus marker at the destination
+                            busMarker = mMap.addMarker(new MarkerOptions().position(busCurrentLocation).title("Bus Location").icon(busIcon));
+
+                            // Stop the tracking as the bus has reached the destination
                             stopTrackingBus(); // Call to stop the tracking
+
+                            // Notify the user that the bus has arrived
+                            Toast.makeText(getApplicationContext(), "Bus has arrived at the destination", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Update bus location (for simulation purposes, move it towards 'toLatLng')
+                            double latIncrement = (toLatLng.latitude - busCurrentLocation.latitude) / 100; // Adjust denominator for speed
+                            double lngIncrement = (toLatLng.longitude - busCurrentLocation.longitude) / 100; // Adjust denominator for speed
+
+                            busCurrentLocation = new LatLng(busCurrentLocation.latitude + latIncrement,
+                                    busCurrentLocation.longitude + lngIncrement);
+
+                            // Remove the previous bus marker
+                            if (busMarker != null) {
+                                busMarker.remove();
+                            }
+
+                            // Load the custom bus icon from the drawable folder
+                            BitmapDescriptor busIcon = BitmapDescriptorFactory.fromResource(R.drawable.bus_clipart);
+
+                            // Draw the new bus marker
+                            busMarker = mMap.addMarker(new MarkerOptions().position(busCurrentLocation).title("Bus Location").icon(busIcon));
+
+                            // Optionally, move camera to the bus location (if needed)
+                            // mMap.moveCamera(CameraUpdateFactory.newLatLng(busCurrentLocation));
                         }
                     }
                 });
             }
-        }, 0, 150); // Update every second
+        }, 0, 150); // Update every 150 ms
         isTrackingBus = true; // Set the tracking flag to true
     }
+
 
     private boolean hasBusReachedDestination() {
         // Check if the bus is close enough to the destination (using a simple distance check)
@@ -200,12 +238,9 @@ public class BusLocation extends AppCompatActivity implements OnMapReadyCallback
             busTimer = null; // Set to null to prevent reuse
         }
 
-        // Notify the user that the bus has arrived
-        Toast.makeText(this, "Bus has arrived at the destination", Toast.LENGTH_SHORT).show();
-
         // Remove the bus marker if it exists
         if (busMarker != null) {
-            busMarker.remove();
+            //busMarker.remove();
             busMarker = null;
         }
 
