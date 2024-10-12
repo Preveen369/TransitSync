@@ -22,7 +22,7 @@
 
     <TextView
         android:layout_width="211dp"
-        android:layout_height="40dp"
+        android:layout_height="41dp"
         android:gravity="center"
         android:text="TransitSync"
         android:textColor="@color/black"
