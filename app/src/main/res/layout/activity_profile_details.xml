@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileDetails"
-    android:background="#83B5B5B5">
+    android:background="@drawable/bus_bkgd">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item_card_parent"
@@ -20,7 +20,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="380dp"
+            android:layout_height="305dp"
             android:paddingStart="15dp"
             android:paddingTop="15dp"
             android:paddingEnd="15dp"
@@ -151,170 +151,12 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/item_counter_card_parent"
-                android:layout_width="250dp"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_below="@+id/item_videos_card_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="0dp"
                 app:cardBackgroundColor="@android:color/transparent"
                 app:cardElevation="0dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <RelativeLayout
-                            android:id="@+id/item_1_click_parent"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="?attr/selectableItemBackground"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:gravity="center">
-
-                            <TextView
-                                android:id="@+id/item_1_label"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/item_1_value"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:ellipsize="end"
-                                android:lines="1"
-                                android:maxLength="20"
-                                android:text="Following"
-                                android:textColor="#5B5A5F"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:id="@+id/item_1_value"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:ellipsize="end"
-                                android:lines="1"
-                                android:maxLength="20"
-                                android:text="445"
-                                android:textColor="#131313"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                        </RelativeLayout>
-
-                        <View
-                            android:id="@+id/item_divider_2"
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:background="#ececec" />
-
-                        <RelativeLayout
-                            android:id="@+id/item_2_click_parent"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="?attr/selectableItemBackground"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:gravity="center">
-
-                            <TextView
-                                android:id="@+id/item_2_label"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/item_2_value"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:ellipsize="end"
-                                android:lines="1"
-                                android:maxLength="20"
-                                android:text="Followers"
-                                android:textColor="#5B5A5F"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:id="@+id/item_2_value"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:ellipsize="end"
-                                android:lines="1"
-                                android:maxLength="20"
-                                android:text="8k"
-                                android:textColor="#131313"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                        </RelativeLayout>
-
-                        <View
-                            android:id="@+id/item_divider_1"
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:background="#ececec" />
-
-                        <RelativeLayout
-                            android:id="@+id/item_3_click_parent"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="?attr/selectableItemBackground"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:gravity="center">
-
-                            <TextView
-                                android:id="@+id/item_3_label"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/item_3_value"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:ellipsize="end"
-                                android:lines="1"
-                                android:maxLength="20"
-                                android:text="Likes"
-                                android:textColor="#5B5A5F"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:id="@+id/item_3_value"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:ellipsize="end"
-                                android:lines="1"
-                                android:maxLength="20"
-                                android:text="9k"
-                                android:textColor="#131313"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
