@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:background="#D3D3D3"
+        android:background="#D7D7D7"
         android:layout_alignParentBottom="true">
 
         <EditText
