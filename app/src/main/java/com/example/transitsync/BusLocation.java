@@ -213,20 +213,21 @@ public class BusLocation extends AppCompatActivity implements OnMapReadyCallback
                             // Draw the new bus marker
                             busMarker = mMap.addMarker(new MarkerOptions().position(busCurrentLocation).title("Bus Location").icon(busIcon));
 
-                            // Optionally, move camera to the bus location (if needed)
-                            mMap.moveCamera(CameraUpdateFactory.newLatLng(busCurrentLocation));
+                            float zoomLevel = 17.0f;
+                            // Optionally, move and zoom camera to the bus location (if needed)
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(busCurrentLocation, zoomLevel));
                         }
                     }
                 });
             }
-        }, 0, 165); // Update every 150 ms
+        }, 0, 500); // Update every 150 ms
         isTrackingBus = true; // Set the tracking flag to true
     }
 
 
     private boolean hasBusReachedDestination() {
         // Check if the bus is close enough to the destination (using a simple distance check)
-        double threshold =  0.00055; // Define a small threshold for latitude/longitude (0.001)
+        double threshold =  0.0005; // Define a small threshold for latitude/longitude (0.001)
         return Math.abs(busCurrentLocation.latitude - toLatLng.latitude) < threshold &&
                 Math.abs(busCurrentLocation.longitude - toLatLng.longitude) < threshold;
     }
