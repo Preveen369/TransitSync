@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText email, password;
     private Button loginButton;
-    private TextView signupLink;
+    private Button signupBtn;
     private DatabaseReference mDatabase;
 
     @Override
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.login_button);
-        signupLink = findViewById(R.id.signup_link);
+        signupBtn = findViewById(R.id.signup_link);
 
         // Set up login button
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         // Set up signup link
-        signupLink.setOnClickListener(new View.OnClickListener() {
+        signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Redirect to the SignUpActivity
