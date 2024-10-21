@@ -27,8 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText name, email, password;
-    private Button signupButton;
-    private TextView loginLink;
+    private Button signupButton, loginBtn;
     private DatabaseReference mDatabase; // Reference to the Firebase Realtime Database
 
     @Override
@@ -45,7 +44,7 @@ public class SignUpActivity extends AppCompatActivity {
         email = findViewById(R.id.signup_email);
         password = findViewById(R.id.signup_password);
         signupButton = findViewById(R.id.signup_button);
-        loginLink = findViewById(R.id.login_link);
+        loginBtn = findViewById(R.id.login_link);
 
         // Set up sign-up button
         signupButton.setOnClickListener(new View.OnClickListener() {
@@ -55,8 +54,8 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        // Set up login link
-        loginLink.setOnClickListener(new View.OnClickListener() {
+        // Set up login button
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
