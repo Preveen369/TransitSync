@@ -5,37 +5,22 @@
     android:layout_height="match_parent"
     android:background="@drawable/bus_bkgd">
 
-    <!-- Button to View Bus Details -->
+    <!-- Button to View Bus Route Details -->
 
     <Button
-        android:id="@+id/view_bus_details"
+        android:id="@+id/bus_route_details"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="223dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/edit_btn_background"
-        android:text="View Bus Details"
+        android:text="Bus Route Details"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <!-- Button to Track Bus Location -->
-    <Button
-        android:id="@+id/track_bus_location"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/edit_btn_background"
-        android:text="Track Bus Location"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_bus_details" />
 
     <!-- Button to View Profile -->
     <Button
@@ -50,6 +35,6 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/track_bus_location" />
+        app:layout_constraintTop_toBottomOf="@+id/bus_route_details" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,26 +13,25 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button busLocation, busDetails, profile;
+    private Button busRouteDetails, profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        busLocation = findViewById(R.id.track_bus_location);
-        busDetails = findViewById(R.id.view_bus_details);
+        busRouteDetails = findViewById(R.id.bus_route_details);
         profile = findViewById(R.id.profile);
 
-        busLocation.setOnClickListener(new View.OnClickListener() {
+        /*busLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, BusLocation.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
-        busDetails.setOnClickListener(new View.OnClickListener() {
+        busRouteDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, BusDetails.class);
