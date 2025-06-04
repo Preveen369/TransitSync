@@ -68,11 +68,11 @@ TransitSync/
 
 ## 📲 Installation & Setup
 
-### Prerequisites
+### 📋 Prerequisites
 - Android Studio installed
 - Firebase project setup
 
-### Steps
+### 🧑‍💻 Steps to Run
 1. **Clone the repository**
    ```sh
    git clone https://github.com/Preveen369/TransitSync.git
