@@ -1,9 +1,9 @@
 # 🚍 Transit-Sync
 
-![Platform](https://img.shields.io/badge/Platform-Android-blue.svg)  
-![Tech](https://img.shields.io/badge/Backend-Firebase-orange.svg)  
-![Language](https://img.shields.io/badge/Language-Java-yellow.svg)  
-![UI](https://img.shields.io/badge/UI-XML-green.svg)  
+![Platform](https://img.shields.io/badge/Platform-Android-blue.svg) 
+![Tech](https://img.shields.io/badge/Backend-Firebase-orange.svg) 
+![Language](https://img.shields.io/badge/Language-Java-yellow.svg)
+![UI](https://img.shields.io/badge/UI-XML-green.svg) 
 ![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 
 **Transit-Sync** is an Android-based mobile application designed to provide real-time transit information, helping users track buses, view routes, and manage their profiles. With a user-friendly interface, secure authentication, and Firebase integration, this app simplifies navigation for daily commuters and transit enthusiasts alike.
